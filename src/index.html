@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title></title>
+  <title>Currency</title>
 </head>
 <body>
-  
+  <div class="container">
+    <h1>Currency Exchange API</h1>
+    <form id="currencyExchange">
+    <label for="USDamount">Enter a US Dollar Amount to be converted to </label>
+    <br>
+    <input id="USDamount" min="0" type="number" placeholder="$ USD Amount" required>
+    <br>
+    <br>
+
+      <label for="currencyExchange" class="control-label">Select a currency for exchange:</label>
+      <div class="col-sm-2">
+        <select class="form-control" id="selectCurrency" required>
+          <option>Euro</option>
+          <option>Franc</option>
+        </select>
+      </div>
+    <br>
+    <button class="btn-info" id="currencyConvert">Convert</button>
+    </form>
+    <div class="showErrors"></div>
+    <div class="showExchange"></div>
+  </div>
 </body>
 </html>
