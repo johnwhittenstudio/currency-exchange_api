@@ -7,17 +7,22 @@
   <div class="container">
     <h1>Currency Exchange API</h1>
     <form id="currencyExchange">
-    <label for="USDamount">Enter a US Dollar Amount to be converted to </label>
+    <label for="USDamount">How much would you like to exchange?</label>
     <br>
-    <input id="USDamount" min="0" type="number" placeholder="$ USD Amount" required>
+    <input id="USDamount" min="0" type="number" placeholder="$ US Dollars" required>
     <br>
     <br>
 
-      <label for="currencyExchange" class="control-label">Select a currency for exchange:</label>
-      <div class="col-sm-2">
-        <select class="form-control" id="selectCurrency" required>
-          <option>Euro</option>
-          <option>Franc</option>
+      <label for="selectCurrency" class="control-label">Select a currency for exchange:</label>
+      <div class="col-sm-4">
+        <select class="form-control" id="selectCurrency">
+          <option value="AUD">Australian dollar (AUD)</option>
+          <option value="CAD">Canadian dollar (CAD)</option>
+          <option value="DKK">Danish krone (DKK)</option>
+          <option value="EUR">European euro (EUR)</option>
+          <option value="ISK">Icelandic krona (ISK)</option>
+          <option value="INR">Indian rupee (INR)</option>
+          <option value="MXN">Mexican peso (MXN)</option>
         </select>
       </div>
     <br>
