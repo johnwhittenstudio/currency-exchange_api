@@ -5,19 +5,24 @@ import './css/styles.css';
 import CurrencyService from './js/currency-services';
 
 
-function clearFields(){
-  $('#search').val("");
-  $('.showConversion').text("");
-}
+// function clearFields(){
+//   $('#selectCurrency').val("");
+//   $('.showConversion').text("");
+// }
 
-$('#currencySearch').click(function() {
-  let search = $('#search').val();
-  clearFields();
-  let promise = CurrencyService.getSearch(search);
-  promise.then(function(response){
-    const body = JSON.parse(response);
-    $('.showConversion').text(`The conversion rate from USD to ${body.response.target_code} is: ${body.response.conversion_result}`);
-  }, function(error) {
-    $('.showErrors').text(`There was an error processing your request: ${error}`);
+$(document).ready(function() {
+  $('#currencyConvert').click(function() {
+    event.preventDefault();
+    let currency = $('#selectCurrency').val();
+    let amount = $('#USDamount').val();
+    // clearFields();
+
+    let promise = CurrencyService.getExchange(currency, amount);
+    promise.then(function(response){
+      const body = JSON.parse(response);
+      $('.showExchange').text(`The conversion of ${amount} USD to ${currency} = ${body.conversion_result} at a conversion rate of ${body.conversion_rate}`);
+    }, function(error) {
+      $('.showErrors').text(`There was an error processing your request: ${error}`);
+    });
   });
 });
