@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -12,6 +14,7 @@ module.exports = {
     contentBase: "./dist"
   },
   plugins: [ 
+    new Dotenv(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'jsDevEnvironmentTemplate',
@@ -22,25 +25,36 @@ module.exports = {
   module: { 
     rules: [
       {
-        test: /\.(gif|png|jpe?g)$/,
+        test: /\.(svg|ico|gif|png|jpe?g)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'assets/images/'
+              outputPath: 'assets/'
             }
           }
         ]
       },
-      
+      {
+        test: /\.(woff(2)?|ttf|otf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/'
+            }
+          }
+        ]
+      },
       {
         test:/\.html$/,
         use: [
           'html-loader'
         ]
       },
-
+      
       {
         test: /\.css$/,
         use: [
