@@ -85,7 +85,7 @@ You will need to make an account and get an API key. The "Free Plan" allows for 
 - _Update package.json, line 8 to: "start": "npm run build & webpack-dev-server --open --mode development"_
 
 ## Known Bugs
-- _ API_KEY malfunctioning when using ${process.env.API_KEY} in the url on line 6 of currency-services.js. Site functions by entering API KEY directly into url and bypassing .env storage._
+- _None._
 
 ## License
 [MIT License](https://opensource.org/licenses/MIT) Published _**2022**_ _**John Whitten**_
