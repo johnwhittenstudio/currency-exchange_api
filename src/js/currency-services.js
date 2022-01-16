@@ -3,7 +3,7 @@ export default class CurrencyService {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
       console.log(request);
-      const searchURL = `https://v6.exchangerate-api.com/v6/5deb8bf9bddbb977f24d036c/pair/USD/${currency}/${amount}`;
+      const searchURL = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${currency}/${amount}`;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);

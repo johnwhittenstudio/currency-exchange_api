@@ -5,15 +5,17 @@
 </head>
 <body>
   <div class="container">
+    <div class="header1">
     <h1>Currency Exchange API</h1>
+  </div>
     <form id="currencyExchange">
-    <label for="USDamount">How much would you like to exchange?</label>
+    <label for="USDamount"><strong>How much would you like to exchange?</strong></label>
     <br>
     <input id="USDamount" min="0" type="number" placeholder="$ US Dollars" required>
     <br>
     <br>
 
-      <label for="selectCurrency" class="control-label">Select a currency for exchange:</label>
+      <label for="selectCurrency" class="control-label"><strong>Select a currency for exchange:</strong></label>
       <div class="col-sm-4">
         <select class="form-control" id="selectCurrency">
           <option value="AFN">Afghan afghani (AFN)</option>
@@ -24,7 +26,11 @@
           <option value="BRL">Brazilian real (BRL)</option>
           <option value="CAD">Canadian dollar (CAD)</option>
           <option value="DKK">Danish krone (DKK)</option>
+          <option value="EGP">Egyptian pound (EGP)</option>
+          <option value="ERN">Eritrean nakfa (ERN)</option>
           <option value="EUR">European euro (EUR)</option>
+          <option value="FJD">Fijian dollar (FJD)</option>
+          <option value="FNM">Funny money (FNM)</option>
           <option value="ISK">Icelandic krona (ISK)</option>
           <option value="INR">Indian rupee (INR)</option>
           <option value="ILS">Israeli new shekel (ILS)</option>
@@ -48,10 +54,19 @@
         </select>
       </div>
     <br>
-    <button class="btn-info" id="currencyConvert">Convert</button>
+    <button class="btn-info" id="currencyConvert">Exchange</button>
     </form>
+    <br>
     <div class="showErrors"></div>
+    <br>
     <div class="showExchange"></div>
+    <div class="showConversionRate"></div>
+    <div class="showInvalidNumberError"></div>
+    <div class="showWarning"></div>
+  <br>
+  <div class="footer">
+    <p>created with <img src="assets/images/mantelpiece-clock.png"> & <img src="assets/images/money-bag.png"> by John Whitten in 2022 for <a href="https://www.epicodus.com/"> <em>Epicodus</em></a></p>
   </div>
+</div>
 </body>
 </html>
