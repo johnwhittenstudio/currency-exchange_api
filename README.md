@@ -6,6 +6,10 @@
 
 #### _This is a web-based application wherein the user can type in an amount (in U.S. dollars) and then choose which currency it should be converted to (such as francs, marks, rupees, and so on). To determine the most recent exchange rate, this application will make an API call to the Exchange Rate API._
 
+## Github Pages Link
+
+### [Currency Exchange API](https://johnwhittenstudio.github.io/currency-exchange_api/) 
+
 ## Technologies Used
 - _Babel 7.6.4_
 - _Bootstrap 5.1.3_
