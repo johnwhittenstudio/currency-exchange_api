@@ -15,13 +15,13 @@ module.exports = {
     contentBase: "./dist"
   },
   plugins: [ 
-    new Dotenv(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Currency Exchange API',
       template: './src/index.html',
       inject: 'body'
-    })
+    }),
+    new Dotenv()
   ],
   module: { 
     rules: [
@@ -32,7 +32,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'assets/'
+              outputPath: 'assets/images/'
             }
           }
         ]
